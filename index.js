@@ -164,6 +164,11 @@ app.post("/sendLocation", async (req, res, next) => {
     res.json(result);
 }); //sendLocation
 
+app.get("/getAllChats", async (req, res, next) => {
+    var result = await Sessions.getAllChatsNewMsg();
+    res.json(result);
+}); //getAllChatsNewMsg
+
 app.get("/getAllChatsNewMsg", async (req, res, next) => {
     var result = await Sessions.getAllChatsNewMsg(req.body.sessionName);
     res.json(result);
