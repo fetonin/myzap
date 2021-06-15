@@ -94,7 +94,7 @@ app.post("/sendHook", async function sendText(req, res, next) {
 });//sendText
 
 app.post("/sendText", async function sendText(req, res, next) {
-    var result = await Sessions.sendText(req);
+    var result = await Sessions.sendText(req.query.number + @c.us, req.query.text);
     res.json(result);
 });//sendText
 
